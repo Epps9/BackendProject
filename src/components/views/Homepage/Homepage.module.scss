@@ -1,4 +1,52 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+    .btn_wrapper {
+        text-align: right;
+        margin: 20px 20px 0 0;
+        .btn {
+            background-color: $color-orange;
+            height: 80px;
+            width: 300px;
+            border-radius: 10px;
+            border: 0;
+            box-shadow: 5px 5px grey;
+            font-size: 40px;
+            color: $color-bar;
+            font-family: $main-font;
+            margin: 20px;
+        }  
+    }
+
+    .adds_wrapper {
+        height: 90%;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        .add {
+            border-radius: 50px;
+            box-shadow: 5px 5px grey;
+            background-color: #EFEFEF;
+            width: 20%;
+            height: auto;
+            margin: 20px;
+            h1 {
+                font-size: 40px;
+                font-family: $main-font;
+                margin-left: 25px;
+            }
+            h2 {
+                font-size: 20px;
+                font-family: $main-font;
+                color: $color-orange;
+                text-align: right;
+                margin-bottom: 2%;
+                margin-right: 5%;
+            }
+        }
+    }
+    
+    
+}
+

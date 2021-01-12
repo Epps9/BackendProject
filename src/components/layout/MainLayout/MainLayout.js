@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Homepage } from '../../views/Homepage/Homepage';
 
 import clsx from 'clsx';
 
@@ -10,8 +11,10 @@ import styles from './MainLayout.module.scss';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>MainLayout</h2>
-    {children}
+    <div className={styles.topElement}>
+      <h2>Add your Ad</h2>
+    </div>
+    <Homepage/>
   </div>
 );
 

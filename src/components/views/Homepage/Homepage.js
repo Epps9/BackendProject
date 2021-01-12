@@ -10,8 +10,43 @@ import styles from './Homepage.module.scss';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>Homepage</h2>
-    {children}
+    <div className={styles.btn_wrapper}>
+      <button className={styles.btn}>+ Add new ad</button>
+    </div>
+    <div className={styles.adds_wrapper}>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+      <div className={styles.add}>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h2>01-01-2020</h2>
+      </div>
+    </div>
   </div>
 );
 
