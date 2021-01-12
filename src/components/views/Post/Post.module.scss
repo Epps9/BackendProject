@@ -1,4 +1,44 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+    height: 100%;
+    .post_wrapper {
+        height: auto;
+        width: 90%;
+        margin: 50px auto;
+        background-color: black;
+        opacity: 0.8;
+        border-radius: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        h2 {
+            font-family: $main-font;
+            padding-top: 30px;
+            color: $color-orange;
+        }
+        .add_content {
+          color: white;
+          font-size: 20px;
+        }  
+        .contact {
+          padding: 20px 0;
+        }
+        .price {
+           display: flex;
+           flex-direction: row; 
+        }
+    }
+}
+
+h3,p {
+    color: white;
+    font-family: $main-font;
+}
+h3 {
+    font-size: 25px;
+    margin: 10px 10px 10px 0;
+    color: $color-orange;
+}
+p {
+    font-size: 20px;
+}    
