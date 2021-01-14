@@ -10,7 +10,7 @@ import styles from './Header.module.scss';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <button className={styles.btn_header}>Log in</button>
+    <button className={styles.btn_header} href="https://google.com">Log in</button>
     <button className={styles.btn_header}>See your adds</button>
     <button className={styles.btn_header}>Log out</button>
   </div>

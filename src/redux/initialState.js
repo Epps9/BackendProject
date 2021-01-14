@@ -5,5 +5,9 @@ export const initialState = {
       active: false,
       error: false,
     },
+    loginStatus: {
+      logged: true,
+      notLogged: false,
+    },
   },
 };
