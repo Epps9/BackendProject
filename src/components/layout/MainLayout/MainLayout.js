@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PostEdit } from '../../views/PostEdit/PostEdit';
+import { NotFound } from '../../views/NotFound/NotFound';
 
 import clsx from 'clsx';
 
@@ -14,7 +14,7 @@ const Component = ({className, children}) => (
     <div className={styles.topElement}>
       <h1>Add your Ad</h1>
     </div>
-    <PostEdit/>
+    <NotFound/>
   </div>
 );
 

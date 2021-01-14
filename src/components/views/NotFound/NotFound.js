@@ -10,7 +10,10 @@ import styles from './NotFound.module.scss';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>NotFound</h2>
+    <div className={styles.wrapper}>
+      <h2>The page you have been looking for does not exist.</h2>
+      <button>Go back to homepage</button>
+    </div>
     {children}
   </div>
 );
