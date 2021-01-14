@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Post } from '../../views/Post/Post';
+import { PostAdd } from '../../views/PostAdd/PostAdd';
 
 import clsx from 'clsx';
 
@@ -12,9 +12,9 @@ import styles from './MainLayout.module.scss';
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
     <div className={styles.topElement}>
-      <h2>Add your Ad</h2>
+      <h1>Add your Ad</h1>
     </div>
-    <Post/>
+    <PostAdd/>
   </div>
 );
 

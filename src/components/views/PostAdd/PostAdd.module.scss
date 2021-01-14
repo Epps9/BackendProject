@@ -1,4 +1,77 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+    height: 100%;
+    margin: 50px;
+    .post_wrapper {
+        height: auto;
+        margin: 0 auto;
+        width: 60%;
+        background-color: $color-dark;
+        opacity: 0.8;
+        border-radius: 20px;
+        padding: 50px;
+        h2 {
+            margin: 0;
+            margin-bottom: 50px;
+            font-family: $main-font;
+            color: $color-happy;
+            display: inline-block;
+            font-size: 40px;
+        }
+    }
+    form {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        label {
+            padding: 0 20px;
+            font-size: 18px;
+            color: $color-bright;
+        }
+        input, textarea {
+            margin: 20px 0;
+        }
+        textarea {
+            height: 250px;
+        }
+        input {
+            height: 50px;
+        }
+        button {
+            width: 200px;
+            height: 60px;
+            border-radius: 5px;
+            background-color: $color-happy;
+            font-family: $main-font;
+            font-size: 25px;
+            margin: 30px auto;
+        }
+        input[type="file"] {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            margin-left: 10px;
+        }
+        .custom_file {
+            color: white;
+            height: 60px;
+            width: 250px;
+            background-color: $color-dark;
+            border: 1px solid $color-happy;
+            position: absolute;
+            top: 0;
+            bottom: -1900px;
+            left: -1017px;;
+            right: 0;
+            margin: auto;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $main-font;
+        }
+    }
+}
+

@@ -5,14 +5,14 @@
         text-align: right;
         margin: 20px 20px 0 0;
         .btn {
-            background-color: $color-orange;
+            background-color: $color-happy;
             height: 80px;
             width: 300px;
             border-radius: 10px;
             border: 0;
-            box-shadow: 5px 5px grey;
+            box-shadow: 5px 5px $color-light-dark;
             font-size: 40px;
-            color: $color-bar;
+            color: $color-dark;
             font-family: $main-font;
             margin: 20px;
         }  
@@ -26,7 +26,7 @@
         flex-wrap: wrap;
         .add {
             border-radius: 50px;
-            box-shadow: 5px 5px grey;
+            box-shadow: 5px 5px $color-light-dark;
             background-color: #EFEFEF;
             width: 20%;
             height: auto;
@@ -39,7 +39,7 @@
             h2 {
                 font-size: 20px;
                 font-family: $main-font;
-                color: $color-orange;
+                color: $color-happy;
                 text-align: right;
                 margin-bottom: 2%;
                 margin-right: 5%;
