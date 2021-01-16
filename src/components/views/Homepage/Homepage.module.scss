@@ -6,12 +6,12 @@
         margin: 20px 20px 0 0;
         .btn {
             background-color: $color-happy;
-            height: 80px;
-            width: 300px;
+            height: 60px;
+            width: 230px;
             border-radius: 10px;
             border: 0;
             box-shadow: 5px 5px $color-light-dark;
-            font-size: 40px;
+            font-size: 28px;
             color: $color-dark;
             font-family: $main-font;
             margin: 20px;
@@ -32,9 +32,10 @@
             height: auto;
             margin: 20px;
             h1 {
-                font-size: 40px;
+                font-size: 20px;
                 font-family: $main-font;
-                margin-left: 25px;
+                margin: 25px;
+                color: $color-dark;
             }
             h2 {
                 font-size: 20px;
@@ -42,7 +43,7 @@
                 color: $color-happy;
                 text-align: right;
                 margin-bottom: 2%;
-                margin-right: 5%;
+                margin-right: 10%;
             }
         }
     }

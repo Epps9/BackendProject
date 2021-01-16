@@ -14,7 +14,7 @@ const Component = ({className, children}) => (
     <div className={styles.topElement}>
       <h1>Add your Ad</h1>
     </div>
-    <NotFound/>
+    {children}
   </div>
 );
 

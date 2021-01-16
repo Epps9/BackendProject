@@ -27,7 +27,7 @@ const Component = ({className, children}) => (
         <input type="text"></input>
         <label>PRICE</label>
         <input type="number"></input>
-        <input type="file" id="file" accept="image/*" multiple></input>
+        <div className={styles.input_file}><input type="file" id="file" accept="image/*" multiple></input> </div>
         <label htmlFor="file" className={styles.custom_file}>Choose a photo</label>
         <button type="submit"> Publish </button>
       </form>

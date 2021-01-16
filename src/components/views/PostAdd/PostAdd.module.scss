@@ -24,6 +24,7 @@
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
+        position: relative
         label {
             padding: 0 20px;
             font-size: 18px;
@@ -37,6 +38,7 @@
         }
         input {
             height: 50px;
+            position: relative;
         }
         button {
             width: 200px;
@@ -48,8 +50,6 @@
             margin: 30px auto;
         }
         input[type="file"] {
-            position: relative;
-            display: inline-block;
             width: 100px;
             height: 20px;
             margin-left: 10px;
@@ -62,7 +62,7 @@
             border: 1px solid $color-happy;
             position: absolute;
             top: 0;
-            bottom: -1900px;
+            bottom: -1865px;
             left: -1017px;;
             right: 0;
             margin: auto;
