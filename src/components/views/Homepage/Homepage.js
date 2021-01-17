@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ShortPost } from '../../features/ShortPost/ShortPost';
 
 import clsx from 'clsx';
 
@@ -8,44 +9,13 @@ import { connect } from 'react-redux';
 
 import styles from './Homepage.module.scss';
 
-const Component = ({className, data}) => (
+const Component = ({className}) => (
   <div className={clsx(className, styles.root)}>
     <div className={styles.btn_wrapper}>
       <button className={styles.btn}>+ Add new ad</button>
     </div>
     <div className={styles.adds_wrapper}>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
-      <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
-      </div>
+      <ShortPost></ShortPost>
     </div>
   </div>
 );

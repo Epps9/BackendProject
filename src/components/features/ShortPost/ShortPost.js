@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 
 import styles from './ShortPost.module.scss';
 
-const Component = ({className, data}) => (
+const Component = ({data}) => (
       <div className={styles.add}>
-        <h1>{data.title}</h1>
-        <h2>{data.date}</h2>
+        <h1>{data[0].title}</h1>
+        <h2>{data[0].date}</h2>
       </div>
 );
 
