@@ -1,9 +1,11 @@
 /* selectors */
 export const getAll = ({posts}) => posts.data;
+export const getAllPublished = ({posts}) => posts.data.filter(item => item.status === 'published');
 
 /* action name creator */
 const reducerName = 'posts';
 const createActionName = name => `app/${reducerName}/${name}`;
+
 
 /* action types */
 const FETCH_START = createActionName('FETCH_START');
