@@ -1,0 +1,24 @@
+@import '../../../styles/settings.scss';
+
+        .add {
+            border-radius: 50px;
+            box-shadow: 5px 5px $color-light-dark;
+            background-color: #EFEFEF;
+            width: 20%;
+            height: auto;
+            margin: 20px;
+            h1 {
+                font-size: 20px;
+                font-family: $main-font;
+                margin: 25px;
+                color: $color-dark;
+            }
+            h2 {
+                font-size: 20px;
+                font-family: $main-font;
+                color: $color-happy;
+                text-align: right;
+                margin-bottom: 2%;
+                margin-right: 10%;
+            }
+        }
