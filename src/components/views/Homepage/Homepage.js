@@ -5,7 +5,7 @@ import { ShortPost } from '../../features/ShortPost/ShortPost';
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
-import { getAllPublished } from '../../../redux/postsRedux.js';
+import { getAllPublished, fetchPublished } from '../../../redux/postsRedux.js';
 
 import styles from './Homepage.module.scss';
 
@@ -31,11 +31,11 @@ const mapStateToProps = state => ({
  posts: getAllPublished(state),
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+  fetchPublishedPosts: () => dispatch(fetchPublished()),
+});
 
-const Container = connect(mapStateToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   //Component as Homepage,

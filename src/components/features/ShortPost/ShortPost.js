@@ -6,16 +6,16 @@ import { connect } from 'react-redux';
 
 import styles from './ShortPost.module.scss';
 
-const Component = ({title, date}) => (
+const Component = ({title, created}) => (
       <div className={styles.add}>
         <h1>{title}</h1>
-        <h2>{date}</h2>
+        <h2>{created}</h2>
       </div>
 );
 
 Component.propTypes = {
   title: PropTypes.node,
-  date: PropTypes.node,
+  created: PropTypes.node,
 };
 
 const mapStateToProps = state => ({
