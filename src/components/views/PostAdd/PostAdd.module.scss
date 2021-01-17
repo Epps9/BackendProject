@@ -40,6 +40,9 @@
             height: 50px;
             position: relative;
         }
+        label {
+            color: $color-bright;
+        }
         button {
             width: 200px;
             height: 60px;

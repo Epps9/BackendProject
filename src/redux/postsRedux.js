@@ -1,6 +1,6 @@
 /* selectors */
 export const getAll = ({posts}) => posts.data;
-export const getAllPublished = ({posts}) => posts.data.filter(item => item.status === 'published');
+export const getAllPublished = ({posts}) => posts.data.filter(item => item.status === 'Published');
 
 /* action name creator */
 const reducerName = 'posts';
