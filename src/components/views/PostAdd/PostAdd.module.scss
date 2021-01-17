@@ -49,22 +49,21 @@
             font-size: 25px;
             margin: 30px auto;
         }
-        input[type="file"] {
+        #file {
+            position: relative;
             width: 100px;
             height: 20px;
             margin-left: 10px;
+
         }
         .custom_file {
+            position: absolute;
+            top: 1300px;
             color: white;
             height: 60px;
             width: 250px;
             background-color: $color-dark;
             border: 1px solid $color-happy;
-            position: absolute;
-            top: 0;
-            bottom: -1865px;
-            left: -1017px;;
-            right: 0;
             margin: auto;
             font-size: 20px;
             display: flex;
