@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
+import { getOneById, fetchOne } from '../../../redux/postsRedux';
 
 import styles from './Post.module.scss';
 
@@ -14,11 +15,11 @@ const Component = ({className, post}) => (
       <button href="#">EDIT YOUR ADD</button>
       <div className={styles.dates}>
         <p className={styles.dates_title}>Published:</p>
-        <p>{post.date} /</p>
+        <p>{post.created} /</p>
         <p className={styles.dates_title}>Last modified:</p>
-        <p>{post.dateModified}</p>
+        <p>{post.updated}</p>
       </div>
-      <p className={styles.add_content}>{post.content}
+      <p className={styles.add_content}>{post.email}
       </p>
       <div className={styles.price}>
         <h3>Price:</h3>
@@ -41,17 +42,18 @@ const Component = ({className, post}) => (
 Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  post: PropTypes.node,
 };
 
 const mapStateToProps = state => ({
-  post: state.posts.data[0],
+  post: getOneById(state),
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+    fetchOnePost: id => dispatch(fetchOne(id)),
+});
 
-const Container = connect(mapStateToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   //Component as Post,

@@ -4,6 +4,7 @@ import Axios from 'axios';
 /* selectors */
 export const getAll = ({posts}) => posts.data;
 export const getAllPublished = ({posts}) => posts.data.filter(item => item.status === 'published');
+export const getOneById = ({posts}) => posts.data.filter(item => item.id === posts.data.id);
 
 /* action name creator */
 const reducerName = 'posts';
@@ -22,13 +23,31 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
 /* thunk creators */
 export const fetchPublished = () => {
-  return (dispatch, getState) => {
-    dispatch(fetchStarted());
+  return (dispatch, getState, posts) => {
+    if (posts.data === [] && posts.loading.data === false) {
+    dispatch(fetchStarted())};
 
     Axios
       .get('http://localhost:8000/api/posts')
       .then(res => {
         dispatch(fetchSuccess(res.data));
+      })
+      .catch(err => {
+        dispatch(fetchError(err.message || true));
+      });
+  };
+};
+
+
+export const fetchOne = (id) => {
+  return (dispatch, getState, posts) => {
+    if (posts.data.id === id) {
+    dispatch(fetchStarted())};
+
+    Axios
+      .get('http://localhost:8000/api/:id')
+      .then(res => {
+        dispatch(fetchSuccess(res.data.id));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));

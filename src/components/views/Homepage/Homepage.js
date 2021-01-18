@@ -9,6 +9,8 @@ import { getAllPublished, fetchPublished } from '../../../redux/postsRedux.js';
 
 import styles from './Homepage.module.scss';
 
+
+
 const Component = ({className, posts}) => (
   <div className={clsx(className, styles.root)}>
     <div className={styles.btn_wrapper}>
