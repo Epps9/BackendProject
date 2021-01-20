@@ -29,7 +29,7 @@ router.get('/posts/:id', async (req, res) => {
   }
 });
 
-router.post('/post/add', async (req,res) => {
+router.post('/posts/add', async (req,res) => {
   try {
     const { id, title, content, created, updated, email, status, photo, price, phone, location } = (req.body);
       const newPost = new Post({id: id, title: title, content: content, created: created, updated: updated, email: email, status: status, photo: photo, price: price, phone: phone, location: location });

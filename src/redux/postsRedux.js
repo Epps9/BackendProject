@@ -55,6 +55,22 @@ export const fetchOne = (item) => {
   };
 };
 
+export const postOne = () => {
+  return (dispatch, getState, post) => {
+    if (post) {
+    dispatch(fetchStarted())};
+
+    Axios
+      .post('http://localhost:8000/api/posts')
+      .then(res => {
+        dispatch(fetchSuccess(res));
+      })
+      .catch(err => {
+        dispatch(fetchError(err.message || true));
+      });
+  };
+};
+
 /* reducer */
 export const reducer = (statePart = [], action = {}) => {
   switch (action.type) {

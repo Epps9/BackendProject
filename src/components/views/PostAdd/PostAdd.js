@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { postOne } from '../../../redux/postsRedux.js';
 
 import styles from './PostAdd.module.scss';
 
-const Component = ({className, postAdd}) => (
+const Component = ({className, postAdd, postOnePost}) => (
   <div className={clsx(className, styles.root)}>
     <div className={styles.post_wrapper}>
       <h2>{postAdd.headTitle}</h2>
@@ -29,7 +29,7 @@ const Component = ({className, postAdd}) => (
         <input type="number"></input>
         <label htmlFor="file" className={styles.custom_file}>{postAdd.choosePhoto}</label>
         <div className={styles.input_file}><input type="file" id="file" accept="image/*" multiple></input> </div>
-        <button type="submit"> {postAdd.submitButtonText} </button>
+        <button type="submit" onClick={postOnePost}> {postAdd.submitButtonText} </button>
       </form>
     </div>
   </div>
@@ -44,11 +44,11 @@ const mapStateToProps = state => ({
   postAdd: state.postAdd,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+  postOnePost: post => dispatch(postOne(post)),
+});
 
-const Container = connect(mapStateToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   //Component as PostAdd,
