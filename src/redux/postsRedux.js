@@ -24,7 +24,7 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 /* thunk creators */
 export const fetchPublished = () => {
   return (dispatch, getState, posts) => {
-    if (posts.data === [] && posts.loading.data === false) {
+    if (posts && posts.data === [] && posts.loading.active === false) {
     dispatch(fetchStarted())};
 
     Axios
@@ -39,13 +39,13 @@ export const fetchPublished = () => {
 };
 
 
-export const fetchOne = (id) => {
+export const fetchOne = (item) => {
   return (dispatch, getState, posts) => {
-    if (posts.data.id === id) {
+    if (posts && posts.data.id === item.id) {
     dispatch(fetchStarted())};
 
     Axios
-      .get('http://localhost:8000/api/:id')
+      .get('http://localhost:8000/api/posts/:id')
       .then(res => {
         dispatch(fetchSuccess(res.data.id));
       })
@@ -68,6 +68,7 @@ export const reducer = (statePart = [], action = {}) => {
       };
     }
     case FETCH_SUCCESS: {
+      console.log(action.payload)
       return {
         ...statePart,
         loading: {

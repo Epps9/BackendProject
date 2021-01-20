@@ -11,18 +11,28 @@ import styles from './Homepage.module.scss';
 
 
 
-const Component = ({className, posts}) => (
-  <div className={clsx(className, styles.root)}>
-    <div className={styles.btn_wrapper}>
-      <button className={styles.btn}>+ Add new ad</button>
-    </div>
-    <div className={styles.adds_wrapper}>
-      {posts.map(post => (
-        <ShortPost key={post.key} {...post}/>
-      ))}
-    </div>
-  </div>
-);
+class Component extends React.Component { 
+
+  componentDidMount () {
+    this.props.fetchPublishedPosts();
+  };
+
+  render() {
+    console.log(this.props.posts)
+    return (
+      <div className={clsx(this.props.className, styles.root)}>
+        <div className={styles.btn_wrapper}>
+          <button className={styles.btn}>+ Add new ad</button>
+        </div>
+        <div className={styles.adds_wrapper}>
+          {this.props.posts.map(post => (
+            <ShortPost key={post.key} {...post}/>
+          ))}
+        </div>
+      </div>
+    );
+  }
+ }
 
 Component.propTypes = {
   children: PropTypes.node,
