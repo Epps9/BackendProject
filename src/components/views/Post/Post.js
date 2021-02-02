@@ -15,11 +15,14 @@ class Component extends React.Component {
   };
 
   render() {
-    console.log('this is post',this.props.post)
+
+    const {post} = this.props;
+
+    console.log('this is post', post)
     return (
       <div className={clsx(this.props.className, styles.root)}>
     <div className={styles.post_wrapper}>
-      <h2>{this.props.post.title}</h2>
+      <h2>{post.title}</h2>
       <button href="#">EDIT YOUR ADD</button>
       <div className={styles.dates}>
         <p className={styles.dates_title}>Published:</p>
@@ -27,20 +30,20 @@ class Component extends React.Component {
         <p className={styles.dates_title}>Last modified:</p>
         <p>{this.props.post.updated}</p>
       </div>
-      <p className={styles.add_content}>{this.props.post.email}
+      <p className={styles.add_content}>{post.text}
       </p>
       <div className={styles.price}>
         <h3>Price:</h3>
-        <h3>{this.props.post.price}</h3>
+        <h3>{post.price}</h3>
       </div>
       <div className={styles.contact}>
         <h3>Contact</h3>
         <p>EMAIL:</p>
-        <p>{this.props.post.email}</p>
+        <p>{post.email}</p>
         <p>PHONE:</p>
-        <p>{this.props.post.phone}</p>
+        <p>{post.phone}</p>
         <p>LOCATION:</p>
-        <p>{this.props.post.location}</p>
+        <p>{post.location}</p>
       </div>
     </div>
 
@@ -53,15 +56,14 @@ class Component extends React.Component {
 Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  post: PropTypes.node,
 };
 
 const mapStateToProps = state => ({
   post: getOneById(state),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    fetchOnePost: (state) => dispatch(fetchOne(state)),
+const mapDispatchToProps = (dispatch, state) => ({
+    fetchOnePost: (id) => dispatch(fetchOne(state, id)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

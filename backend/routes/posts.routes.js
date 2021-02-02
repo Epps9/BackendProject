@@ -20,7 +20,7 @@ router.get('/posts', async (req, res) => {
 router.get('/posts/:id', async (req, res) => {
   try {
     const result = await Post
-      .findById(req.params.id);
+      .findById(req.params.id)
     if(!result) res.status(404).json({ post: 'Not found' });
     else res.json(result);
   }
@@ -29,10 +29,10 @@ router.get('/posts/:id', async (req, res) => {
   }
 });
 
-router.post('/posts/add', async (req,res) => {
+router.post('/posts', async (req,res) => {
   try {
-    const { id, title, content, created, updated, email, status, photo, price, phone, location } = (req.body);
-      const newPost = new Post({id: id, title: title, content: content, created: created, updated: updated, email: email, status: status, photo: photo, price: price, phone: phone, location: location });
+    const { id, title, text, created, updated, email, status, photo, price, phone, location } = (req.body);
+      const newPost = new Post({id: id, title: title, text: text, created: created, updated: updated, email: email, status: status, photo: photo, price: price, phone: phone, location: location });
       await newPost.save();
       res.json({message: 'new post saved'});
   }

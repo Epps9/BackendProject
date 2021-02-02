@@ -4,7 +4,7 @@ import Axios from 'axios';
 /* selectors */
 export const getAll = ({posts}) => posts.data;
 export const getAllPublished = ({posts}) => posts.data.filter(item => item.status === 'published');
-export const getOneById = ({posts}) => posts.data.filter(item => item.id === posts.data.id);
+export const getOneById = ({posts}, id) => posts.data.filter(item => item._id === id);
 
 /* action name creator */
 const reducerName = 'posts';
@@ -39,15 +39,15 @@ export const fetchPublished = () => {
 };
 
 
-export const fetchOne = (item) => {
+export const fetchOne = (id) => {
   return (dispatch, getState, posts) => {
-    if (posts && posts.data.id === item.id) {
+    if (posts && posts.data._id === id) {
     dispatch(fetchStarted())};
 
     Axios
       .get('http://localhost:8000/api/posts/:id')
       .then(res => {
-        dispatch(fetchSuccess(res.data.id));
+        dispatch(fetchSuccess(res.data._id));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));
