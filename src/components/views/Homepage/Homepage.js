@@ -5,7 +5,7 @@ import { ShortPost } from '../../features/ShortPost/ShortPost';
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
-import { getAllPublished, fetchPublished } from '../../../redux/postsRedux.js';
+import { getAllPublished, fetchPosts } from '../../../redux/postsRedux.js';
 
 import styles from './Homepage.module.scss';
 
@@ -14,7 +14,7 @@ import styles from './Homepage.module.scss';
 class Component extends React.Component { 
 
   componentDidMount () {
-    this.props.fetchPublishedPosts();
+    this.props.fetchPosts();
   };
 
   render() {
@@ -26,7 +26,7 @@ class Component extends React.Component {
         </div>
         <div className={styles.adds_wrapper}>
           {this.props.posts.map(post => (
-            <ShortPost key={post.key} {...post}/>
+            <ShortPost key={post._id} {...post}/>
           ))}
         </div>
       </div>
@@ -44,7 +44,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPublishedPosts: () => dispatch(fetchPublished()),
+  fetchPosts: () => dispatch(fetchPosts()),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

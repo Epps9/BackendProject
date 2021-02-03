@@ -8,32 +8,64 @@ import { postOne } from '../../../redux/postsRedux.js';
 
 import styles from './PostAdd.module.scss';
 
-const Component = ({className, postAdd, postOnePost}) => (
-  <div className={clsx(className, styles.root)}>
-    <div className={styles.post_wrapper}>
-      <h2>{postAdd.headTitle}</h2>
-      <form>
-        <label>{postAdd.title}</label>
-        <input type="text" ></input>
-        <label>{postAdd.content}</label>
-        <textarea ></textarea>
-        <label>{postAdd.author}</label>
-        <input type="text"></input>
-        <label>YOUR {postAdd.email}</label>
-        <input type="email"></input>
-        <label>{postAdd.phone}</label>
-        <input type="number"></input>
-        <label>{postAdd.location}</label>
-        <input type="text"></input>
-        <label>{postAdd.price}</label>
-        <input type="number"></input>
-        <label htmlFor="file" className={styles.custom_file}>{postAdd.choosePhoto}</label>
-        <div className={styles.input_file}><input type="file" id="file" accept="image/*" multiple></input> </div>
-        <button type="submit" onClick={postOnePost}> {postAdd.submitButtonText} </button>
-      </form>
-    </div>
-  </div>
-);
+class Component extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        title: '',
+        author: '',
+        text: '',
+        email: '',
+        location: '',
+        price: '',
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+
+  handleInputChange = (event) => {
+    event.preventDefault();
+    this.setState({
+      [event.target.name]: event.target.value,
+    })
+  }
+
+  componentDidMount(){
+    console.log('wpisuje sobie', this.state)
+  }
+
+  render() {
+    const {author, title, text, email, location, phone, price } = this.props;
+    return (
+      <div className={clsx(this.props.className, styles.root)}>
+        <div className={styles.post_wrapper}>
+          <h2>{this.props.postAdd.headTitle}</h2>
+          <form >
+            <label>{this.props.postAdd.title}</label>
+            <input type="text" name="title" onChange={this.handleInputChange}></input>
+            <label>{this.props.postAdd.text}</label>
+            <textarea type="text" name="text" onChange={this.handleInputChange}></textarea>
+            <label>{this.props.postAdd.author}</label>
+            <input type="text" name="author" onChange={this.handleInputChange}></input>
+            <label>YOUR {this.props.postAdd.email}</label>
+            <input type="email" name="email" onChange={this.handleInputChange}></input>
+            <label>{this.props.postAdd.phone}</label>
+            <input type="number" name="phone" onChange={this.handleInputChange}></input>
+            <label>{this.props.postAdd.location}</label>
+            <input type="text" name="location" onChange={this.handleInputChange}></input>
+            <label>{this.props.postAdd.price}</label>
+            <input type="number" name="price" onChange={this.handleInputChange}></input>
+            <label htmlFor="file" className={styles.custom_file}>{this.props.postAdd.choosePhoto}</label>
+            <div className={styles.input_file}><input type="file" id="file" accept="image/*" multiple></input> </div>
+            <button type="submit" onClick={this.props.postOnePost}> {this.props.postAdd.submitButtonText} </button>
+          </form>
+        </div>
+      </div>
+    );
+
+  }
+
+}
 
 Component.propTypes = {
   className: PropTypes.string,
